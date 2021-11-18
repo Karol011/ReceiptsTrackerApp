@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Specific Product</h1>
+
+{{ product }}
+<p>cena produktu x2 = {% widthratio product.price 1 product.price %}</p>
+
+{% endblock %}

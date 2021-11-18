@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Receipts</h1>
+
+<ul>
+    {% for receipt in receipts_list %}
+    <li>
+        {{ receipt }} <a href="{% url 'receipts-update' receipt.id  %}">Edit</a>
+        <a href="{% url 'receipts-delete' receipt.id  %}">Delete</a>
+        <p>
+            {% for product in products %}
+               {{ product.name }}
+               {{ product.price }}
+            <br>
+            {% endfor %}
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

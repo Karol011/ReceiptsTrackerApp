@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Products</h1>
+
+<ul>
+    {% for product in products_list %}
+    <li>
+        {{ product }} <a href="{% url 'products-update' product.id  %}">Edit</a>
+        <a href="{% url 'products-delete' product.id  %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
